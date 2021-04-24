@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/mydogspies/bringbackdada-front) ![GitHub last commit](https://img.shields.io/github/last-commit/mydogspies/bringbackdada-front) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mydogspies/bringbackdada-front) ![CircleCI](https://img.shields.io/circleci/build/github/mydogspies/bringbackdada-front)
 
-## Getting Started
+Bringbackdada.com is a photography project run by Berlin-based visual artist Silenceisgrand.
+The project can be found at [https://www.bringbackdada.com] and is part of several art
+projects. As a firm believer in open source and copy-left license forms, the source code for
+this project can be found here.
 
-First, run the development server:
+This project is written in Next.js.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+####IMPORTANT
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Note though that the repo here is parts of the development
+environment and does not necessarily represent the final production version. The code here does not
+contain the underlying database, configuration files nor any external code. This repo is only intended
+as a subjective example of a Spring based website and as the archive for changes to
+the sharp version online.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+####BUG REPORTS
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you find any bugs or error on the bringbackdada.com website, feel free to use the issue tracker
+to file a report!
