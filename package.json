@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy-production": "next build && scp -r ./.next/* mydogspies@188.166.81.55:/var/www/bringbackdada.com/bringbackdada-front/.next"
   },
   "dependencies": {
     "next": "10.1.3",
