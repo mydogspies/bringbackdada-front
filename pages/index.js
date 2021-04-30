@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home({siteStatus}) {
 
-    // test text
+    // test text 1
 
     if (siteStatus) {
 
