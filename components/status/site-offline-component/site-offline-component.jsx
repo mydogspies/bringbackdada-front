@@ -15,7 +15,7 @@ const OfflinePage = () => {
             <main className={styles.main}>
                 <div>
                     <h3>
-                        This site is under some serious re-construction and will be up in early summer 2021
+                        This site is under some serious re-construction and will be up in late spring 2021
                     </h3>
                 </div>
 
