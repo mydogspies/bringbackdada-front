@@ -1,7 +1,7 @@
 module.exports = {
     apps : [{
         name: "bringbackdada-web-front",
-        script: "next start",
+        script: "npm run start",
         env: {
             NODE_ENV: "production",
         }
