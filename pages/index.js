@@ -1,13 +1,10 @@
-import Head from 'next/head'
-import Offline from '../components/status/site-offline-component/site-offline-component'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import OfflinePage from "../components/status/site-offline-component/site-offline-component";
 
-export default function Home({siteStatus}) {
+export default function Home({status}) {
 
-    // test 123
-
-    if (siteStatus) {
-
+    if (status) {
         return (
             <div className={styles.container}>
 
@@ -21,46 +18,13 @@ export default function Home({siteStatus}) {
                             SITE ONLINE!
                         </h3>
                     </div>
-
-                    <div>
-                        <h4>Site online: {siteStatus.toString()}</h4>
-                    </div>
                 </main>
 
             </div>
         );
-
     } else {
-
         return (
-            <Offline />
+            <OfflinePage/>
         );
-
     }
-
 };
-
-export async function getStaticProps() {
-
-    try {
-        const res = await fetch(process.env.DB_API + '/api/v1/status');
-        const status = await res.json();
-        const siteStatus = status.online;
-        return {
-            props: {
-                siteStatus
-            },
-            revalidate: 10, // In seconds
-        };
-    } catch (e) {
-        console.log(e); // TODO refactor to Morgan
-        const siteStatus = false;
-        return {
-            props: {
-                siteStatus
-            },
-            revalidate: 10, // In seconds
-        };
-    }
-
-}
