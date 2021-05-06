@@ -1,0 +1,86 @@
+/* Reset css */
+@use 'reset.css';
+
+/* --- MAIN --- */
+
+
+
+/* --- ADMIN --- */
+
+/* Offline */
+
+.admin-content-box {
+  background-color: darkslateblue;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.admin-content {
+  color: aliceblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#offline-logo {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  font-size: 40px;
+}
+
+#offline-text {
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  font-size: 18px;
+  width: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  #offline-logo {
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    font-size: 32px;
+  }
+
+  #offline-text {
+    position: absolute;
+    top: 75%;
+    left: 45%;
+    font-size: 18px;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  .admin-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #offline-logo {
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    font-size: 20px;
+  }
+
+
+  #offline-text {
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    font-size: 12px;
+    width: 75%;
+  }
+}
+
+

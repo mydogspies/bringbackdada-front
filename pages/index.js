@@ -1,18 +1,15 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import OfflinePage from "../components/status/site-offline-component/site-offline-component";
 
-export default function Home({status}) {
+export default function Home() {
 
-    if (status) {
         return (
-            <div className={styles.container}>
+            <div>
 
                 <Head>
-                    <title>Bringbackdada.com - fine art body and portrait photography</title>
+                    <title>Bringbackdada.com - fine art body and portrait photography - welcome!</title>
                 </Head>
 
-                <main className={styles.main}>
+                <main>
                     <div>
                         <h3>
                             SITE ONLINE!
@@ -22,9 +19,4 @@ export default function Home({status}) {
 
             </div>
         );
-    } else {
-        return (
-            <OfflinePage/>
-        );
-    }
 };
