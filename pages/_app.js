@@ -1,32 +1,27 @@
-import App from "next/app";
-import { UserProvider } from '@auth0/nextjs-auth0';
+import App from 'next/app'
+import {UserProvider} from '@auth0/nextjs-auth0';
+import StatusWrapper from "../components/status-wrapper";
+
 import '../styles/globals.scss';
 
-import SiteOffline from '../components/status/site-offline-component/site-offline-component';
-
-// adding logger
 const logger = require('pino')({
     prettyPrint: {
         levelFirst: true
     }
 });
 
-export default function MyApp({Component, pageProps, status}) {
+export default function ThisApp({Component, pageProps, status}) {
 
-        if(status) {
-            return (
-                <UserProvider>
-                    <Component {...pageProps} status={status}/>
-                </UserProvider>
-            );
-        } else {
-            return (
-                <SiteOffline />
-            )
-        }
+    return (
+        <UserProvider>
+            <StatusWrapper status={status}>
+                <Component {...pageProps} status={status}/>
+            </StatusWrapper>
+        </UserProvider>
+    );
 };
 
-MyApp.getInitialProps = async (appContext) => {
+ThisApp.getInitialProps = async (appContext) => {
     const appProps = await App.getInitialProps(appContext);
     const status = await getSiteStatus();
     return {appProps, status};
@@ -43,3 +38,5 @@ async function getSiteStatus() {
         return false;
     }
 }
+
+
