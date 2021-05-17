@@ -13,13 +13,13 @@ const OfflinePage = () => {
             <div className="admin-content">
                 <Image
                     id="offline-image"
-                    src="/images_admin/site_offline/bbd_front.jpg"
+                    src="/default/images/bbd_front.jpg"
                     alt="Bringbackdada photo series"
                     width={650}
                     height={650}
                 />
                 <div id="offline-text">
-                    <h3>This site is under some serious re-construction and will be up in late spring 2021</h3>
+                    <h3>This site is under some serious re-construction and will be up in early summer 2021</h3>
                 </div>
                 <div id="offline-logo">
                     <h1>bri+gba*kDADA</h1>
