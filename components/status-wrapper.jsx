@@ -1,26 +1,38 @@
 import {useUser} from "@auth0/nextjs-auth0";
+import {useEffect, useRef, useState} from "react";
 
-import OfflineHeader from "./status/site-offline-header/site-offline-header";
-import SiteOffline from "./status/site-offline-component/site-offline-component";
+const logger = require('pino')({
+    prettyPrint: {
+        levelFirst: true
+    }
+});
 
-export default function StatusWrapper({children, status}) {
+export default function StatusWrapper({children}) {
 
-    const user = useUser();
+    const {user, error, isLoading} = useUser();
+    const [site, setSite] = useState('');
 
-    console.log('status: ' + status);
-    console.log('user: ' + user);
+    async function getSiteStatus() {
+        try {
+            const res = await fetch('http://localhost:5010/api/v1/status');
+            const status = await res.json();
+            setSite(status.online.toString());
+        } catch (error) {
+            logger.error(error);
+        }
+    }
 
-    if (user.user && !status) {
+    useEffect(async () => {
+        await getSiteStatus();
+    },[]);
+
+    if (user) {
         return (
             <>
-                <OfflineHeader/>
+                <div>I am logged in as {user.name} and site is {site}</div>
                 {children}
             </>
 
-        )
-    } else if (!user.user && !status) {
-        return (
-            <SiteOffline/>
         )
     } else {
         return (
@@ -30,6 +42,8 @@ export default function StatusWrapper({children, status}) {
         )
     }
 };
+
+
 
 
 
